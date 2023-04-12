@@ -8,8 +8,7 @@ let todos = [
 ];
 let collection = new todoCollection_1.TodoCollection("Patryk", todos);
 console.clear();
-console.log(`Lista ${collection.userName}a`);
-let newId = collection.addTodo("Iść pobiegać");
-let todoItem = collection.getTodoById(newId);
-todoItem.printDetails();
+console.log(`Lista ${collection.userName}a`
+    + `(liczba zadań pozostałych do zrobienia: ${collection.getItemCounts().incomplete})`);
+collection.getTodoItems(true).forEach(item => item.printDetails());
 //collection.addTodo(todoItem);
